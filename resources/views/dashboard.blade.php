@@ -17,10 +17,18 @@
 
 <div class="container-fluid">
     <div class="row">
+        <div class="col-md-12 col-md-offset-2">
+            <h1>Adora backend dashboard</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
         <div class="col-md-8">
             <ul class="nav nav-tabs">
                 <li class="active">
-                    <a href="#">Home</a>
+                    <a href="#">Homepage</a>
                 </li>
                 <li>
                     <a href="#">Profile</a>
@@ -49,26 +57,19 @@
                 </li>
             </ul>
         </div>
-        <div class="col-md-4">
-            <ul class="nav nav-pills">
-                <li class="active">
-                    <a href="#"> <span class="badge pull-right">42</span> Home</a>
-                </li>
-                <li>
-                    <a href="#"> <span class="badge pull-right">16</span> More</a>
-                </li>
-            </ul>
-        </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 text-center">
             <h3>
-                h3. Lorem ipsum dolor sit amet.
+                Welcome to your dashboard, Jim!
             </h3>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
             <div class="row">
                 <div class="col-md-4">
                     <div class="thumbnail">
@@ -121,21 +122,28 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-4">
 
-            <button type="button" class="btn btn-primary">
-                Default
-            </button>
-        </div>
-        <div class="col-md-4">
-        </div>
-    </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            {!! Form::open(['url' => 'dashboard']) !!}
+            <div class="form-group">
+                {!! Form::label('title', 'Ads Title:') !!}
+                {!! Form::text('title', null, ['class' => 'form-control']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('body', 'Body:') !!}
+                {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::submit('Create adds', ['class' => 'btn btn-primary form-control']) !!}
+            </div>
+
+            {!! Form::close() !!}
         </div>
+        <div class="col-md-2"></div>
     </div>
 </div>
 

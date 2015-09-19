@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+const DEFAULT_URL = 'https://adora-hackthon.firebaseio.com/';
+const DEFAULT_TOKEN = 'UZQ9sT9VRJnMXozIxv2CO5nOSY98Ua0SkxflOLb8';
+const DEFAULT_PATH = '/ads';
 
 class dashboardController extends Controller
 {
@@ -27,7 +30,8 @@ class dashboardController extends Controller
      */
     public function create()
     {
-        //
+
+
     }
 
     /**
@@ -38,7 +42,15 @@ class dashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
+
+        $test = $request->all();
+        $d = new \DateTime();
+
+        $firebase->push(DEFAULT_PATH . '/ads', $test);
+
+// --- storing a string ---
+        return redirect("dashboard");
     }
 
     /**
